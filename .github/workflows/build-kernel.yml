@@ -37,6 +37,7 @@ jobs:
                                   O=../out \
                                   ${{ env.BUILD_ARGS }} "
           cd kernel-source
+          curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
           make ${args} ${{ env.KERNEL_TARGET }}_defconfig
           make -j64 ${args}
 
